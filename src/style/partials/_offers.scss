@@ -1,0 +1,218 @@
+.offers {
+    background-color: $bg;
+    padding: 100px 0;
+
+    &__item {
+        border-radius: 8px;
+        box-shadow: 0 4px 26px 0 $shadow;
+    }
+
+    &__item-top {
+        background-color: $white;
+        padding: 30px 45px;
+    }
+
+    &__item-top__info {
+        display: flex;
+        align-items: flex-end;
+        margin-bottom: 15px;
+    }
+
+    &__item-top__logo {
+        color: $grey-text;
+        font-size: 14px;
+        line-height: 1.43;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        margin-right: 15px;
+    }
+
+    &__item-top__date {
+        font-size: 14px;
+        line-height: 1.36;
+        color: $grey-text;
+        margin-right: 15px;
+    }
+
+    &__item-top__visible {
+        color: $brown-text;
+        font-size: 14px;
+        line-height: 1.36;
+        position: relative;
+        padding-left: 24px;
+
+        &:before {
+            position: absolute;
+            content: "";
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 16px;
+            height: 16px;
+            background-image: url(../img/icons/user.png);
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+    }
+
+    &__item-top__title {
+        font-size: 30px;
+        color: $black;
+        line-height: 1.27;
+        font-weight: 400;
+        margin-bottom: 8px;
+    }
+
+    &__item-top__text {
+        font-size: 16px;
+        color: $black;
+        line-height: 1.5;
+        max-width: 485px;
+    }
+
+    &__item-image {
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+
+    &__item-bottom {
+        background-color: $dark-blue;
+    }
+
+    &__item-bottom__elem {
+        border-bottom: 1px solid $border;
+
+        &:last-of-type {
+            border: none;
+        }
+    }
+
+    &__item-bottom__elem-title {
+        font-size: 22px;
+        color: $white;
+        line-height: 1.27;
+        padding: 30px 45px;
+        position: relative;
+        transition: 0.2s;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $dark-blue-hover;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 45px;
+            bottom: 0;
+            margin: auto;
+            width: 16px;
+            height: 9px;
+            background-image: url(../img/icons/dropdown.png);
+            transform: rotate(0);
+            transition: 0.2s;
+        }
+
+        &.active {
+            &:after {
+                transform: rotate(180deg);
+                transition: 0.2s;
+            }
+        }
+    }
+
+    &__item-bottom__elem-content {
+        display: none;
+        padding: 0 45px;
+    }
+
+    &__item-bottom__elem-content__wrap {
+        display: flex;
+        border-top: 1px solid $border;
+        justify-content: space-between;
+        padding: 30px 0;
+        
+    }
+
+    &__item-bottom__elem-content__text {
+        font-size: 16px;
+        line-height: 1.5;
+        color: $white;
+        max-width: 700px;
+        padding-right: 10px;
+
+        a {
+            color: $links;
+        }
+    }
+
+    &__item-bottom__elem-content__image {
+        margin: 0 auto;
+    
+    }
+    
+    &__item-bottom__elem-content__form {
+        max-width: 280px;
+        margin-top: 30px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .offers {
+        &__item-bottom__elem-content__wrap {
+            flex-wrap: wrap;
+            
+        }
+    
+        &__item-bottom__elem-content__text {
+            flex-basis: 100%;
+            margin-bottom: 30px;
+        }
+    
+        &__item-bottom__elem-content__image {
+            margin: 0 auto;
+        
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .offers {
+        margin: 0 -20px;
+        
+        &__item-top {
+            padding: 30px 15px;
+        }
+
+        &__item-top__visible {
+            span {
+                font-size: 0;
+            }
+            
+        }
+
+        &__item-bottom__elem-title {
+            padding: 15px 50px 15px 15px;
+
+            &:after {
+                right: 15px;
+            }
+        }
+
+        &__item-bottom__elem-content {            
+            padding: 0 15px;
+        }
+
+        &__item-bottom__elem-content__wrap {
+            padding: 15px 0;            
+        }
+
+        &__item-bottom__elem-content__form {
+            max-width: 100%;
+            
+        }
+    }
+}

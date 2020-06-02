@@ -1,0 +1,80 @@
+.form {
+    &__label {
+        margin-bottom: 30px;
+        display: block;
+        position: relative;
+
+        &:last-of-type {
+            margin-bottom: 45px;
+        }
+    }
+
+    &__input {
+        border: none;
+        border-bottom: 1px solid $input;
+        padding: 4px 0;
+        color: $white;
+        font-family: $story;
+        font-size: 16px;
+        line-height: 1.5;
+        background: none;
+        display: block;
+        width: 100%;
+        transition: 0.2s;
+
+        &::placeholder {
+            color: $white;
+            font-family: $story;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        &:hover,
+        &:focus {
+            border-color: $white;
+
+            
+        }
+
+        &:focus + .form__input-clear {
+            opacity: 1;
+        }
+            
+        
+    }
+
+    &__input-clear {
+        width: 14px;
+        height: 14px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        background-image: url(../img/icons/form-clear.png);
+        opacity: 0;
+        transition: 0.2s;
+        cursor: pointer;
+    }
+
+    &__submit {
+        border: 1px solid $white;
+        border-radius: 50px;
+        background: none;
+        padding: 10px 20px;
+        font-family: $story;
+        font-size: 16px;
+        line-height: 1.88;
+        color: $white;
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .form {
+        &__submit {
+            display: block;
+            width: 100%;
+        }
+    }
+}
